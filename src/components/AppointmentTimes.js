@@ -1,17 +1,20 @@
-import React from 'react';
-import { connect } from 'react-redux';
+import React, {Component} from 'react';
 import { ListGroup, ListGroupItem, Button } from 'react-bootstrap';
 
-function AppointmentTimes() {
+class AppointmentTimes extends Component {
+render() {
+    console.log(this.props.time)
 return (
     <div className="container">
         <ListGroup>
             <ListGroupItem>
-                <Button>prop</Button>
+                <Button>this.props.time</Button>
             </ListGroupItem>
         </ListGroup>
     </div>
 )
+}
 };
+
 
 export default AppointmentTimes;

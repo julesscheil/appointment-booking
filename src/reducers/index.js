@@ -21,9 +21,9 @@ switch (action.type) {
 }
 
 const getInitialState = () => {
-  let localStorage = JSON.parse(localStorage.getItem('data'));
-  if(localStorage) {
-    return localStorage
+  var local = JSON.parse(localStorage.getItem('data'));
+  if(local) {
+    return local
   } else {
     return initialState
   }
