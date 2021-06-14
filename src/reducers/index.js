@@ -2,7 +2,7 @@
 
 import { SELECT_APPOINTMENT, UPDATE_APPOINTMENT } from "../actions/types";
 
-function rootReducer(state = initialState, action) {
+function rootReducer(state = initState(), action) {
 switch (action.type) {
   case SELECT_APPOINTMENT:
     return {
@@ -20,16 +20,16 @@ switch (action.type) {
 
 }
 
-// const getInitialState = () => {
-//   var local = JSON.parse(localStorage.getItem('data'));
-//   if(local) {
-//     return local
-//   } else {
-//     return initialState
-//   }
-// }
+const getInitState = () => {
+  var local = JSON.parse(localStorage.getItem('data'));
+  if(local) {
+    return local
+  } else {
+    return initState
+  }
+}
 
-const initialState = {
+const initState = {
   apptData: [
     {
       time: "9:00am-10:00am",
