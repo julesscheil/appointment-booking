@@ -1,12 +1,12 @@
 import { SELECT_APPOINTMENT, UPDATE_APPOINTMENT } from "./types";
 
-export const selectAppointment = (apptData) => ({
+export const selectAppointment = appointmentTime => ({
   type: SELECT_APPOINTMENT,
   payload: {
-    time: apptData.time,
-    userName: apptData.userName,
-    phoneNumber: apptData.phoneNumber,
-    avail: apptData.avail,
+    time: appointmentTime.time,
+    userName: appointmentTime.userName,
+    phoneNumber: appointmentTime.phoneNumber,
+    avail: appointmentTime.avail,
   },
 });
 

@@ -1,8 +1,7 @@
 import React from 'react';
 import { ListGroup, ListGroupItem, Button } from 'react-bootstrap';
-import { useSelector } from 'react-redux';
 
-function AppointmentTimes() {
+function AppointmentTimes(props) {
 
 
 
@@ -10,7 +9,7 @@ return (
     <div className="container">
         <ListGroup>
             <ListGroupItem>
-                <Button>time</Button>
+                <Button>{props.time}</Button>
             </ListGroupItem>
         </ListGroup>
     </div>
