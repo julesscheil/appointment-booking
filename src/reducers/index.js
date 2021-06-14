@@ -1,4 +1,33 @@
-// reducers - 1 reducer because simple app
+// reducers - 1 reducer
+
+import { SELECT_APPOINTMENT, UPDATE_APPOINTMENT } from "../actions/types";
+
+function rootReducer(state = getInitialState(), action) {
+switch (action.type) {
+  case SELECT_APPOINTMENT:
+    return {
+      ...state,
+      selectedAppt: action.payload
+    }
+    case UPDATE_APPOINTMENT:
+      return {
+        ...state,
+        apptData: action.payload.apptData
+      }
+      default:
+        return state;
+}
+
+}
+
+const getInitialState = () => {
+  let localStorage = JSON.parse(localStorage.getItem('data'));
+  if(localStorage) {
+    return localStorage
+  } else {
+    return initialState
+  }
+}
 
 const initialState = {
   apptData: [
@@ -58,3 +87,6 @@ const initialState = {
     avail: false,
   },
 };
+
+
+export default rootReducer;

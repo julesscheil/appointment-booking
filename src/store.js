@@ -1,8 +1,8 @@
 import { createStore } from 'redux';
-import root from './reducers'
+import rootReducer from './reducers'
 
 function initialState() {
-    return createStore(root, initialState)
+    return createStore(rootReducer, initialState)
 };
 
 export default initialState;
