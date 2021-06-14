@@ -2,7 +2,7 @@
 
 import { SELECT_APPOINTMENT, UPDATE_APPOINTMENT } from "../actions/types";
 
-function rootReducer(state = initState(), action) {
+function rootReducer(state = getInitState(), action) {
 switch (action.type) {
   case SELECT_APPOINTMENT:
     return {
@@ -80,6 +80,7 @@ const initState = {
       avail: false,
     },
   ],
+  open:false,
   selectedAppt: {
     time: "",
     userName: "",

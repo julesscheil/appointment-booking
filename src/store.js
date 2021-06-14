@@ -1,8 +1,8 @@
 import { createStore } from 'redux';
 import rootReducer from './reducers'
 
-// function inState(initialState) {
-//     return createStore(rootReducer, initialState)
-// };
+function inState(initState) {
+    return createStore(rootReducer, initState)
+};
 
-export const store = createStore(rootReducer);
+export default inState
