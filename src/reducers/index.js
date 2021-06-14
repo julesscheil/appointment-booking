@@ -1,6 +1,6 @@
 // reducers - 1 reducer
 
-import { SELECT_APPOINTMENT, UPDATE_APPOINTMENT } from "../actions/types";
+import { SELECT_APPOINTMENT, UPDATE_APPOINTMENT, OPEN_CLOSE_MODAL } from "../actions/types";
 
 function rootReducer(state = getInitState(), action) {
 switch (action.type) {
@@ -14,6 +14,15 @@ switch (action.type) {
         ...state,
         apptData: action.payload.apptData
       }
+
+    case OPEN_CLOSE_MODAL:
+    let newState = {
+      ...state,
+      open:!state.open
+    }  
+    localStorage.setItem('data', JSON.stringify(newState));
+    return newState
+
       default:
         return state;
 }

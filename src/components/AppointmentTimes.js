@@ -4,7 +4,6 @@ import { ListGroup, ListGroupItem, Button } from 'react-bootstrap';
 function AppointmentTimes(props) {
 
 
-
 return (
     <div className="container">
         <ListGroup>

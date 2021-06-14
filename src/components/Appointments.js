@@ -1,14 +1,23 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import AppointmentTimes from './AppointmentTimes';
-// import * as Action from '../actions/actions';
+import CreateModal from './CreateModal';
 
-function Appointments() {
+function Appointments(props) {
+
+    const dispatch = useDispatch();
+    const openModal=() => {
+       dispatch({type: 'setModal'});
+    }
+    const closeModal=()=> {
+        dispatch({type:'setModal'});
+    }
+
+
     const appointmentData = useSelector(state => state.appointmentData);
-
     let appointmentsArr=appointmentData.map(appointment =>{
         return (
-            <div>
+            <div onClick={() => openModal()} key={appointment.time}>
                 <AppointmentTimes time={appointment.time}
                 userName={appointment.userName}
                 phoneNumber ={appointment.phoneNumber}
@@ -20,7 +29,12 @@ function Appointments() {
 return (
     <div>
         {appointmentsArr}
+         <CreateModal
+         show={props.open}
+         onHide={closeModal}
+         />
     </div>
+   
 )
 };
 

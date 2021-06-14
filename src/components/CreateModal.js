@@ -1,10 +1,10 @@
 import React from 'react';
 import {Modal, Button, Form} from 'react-bootstrap';
 
-function CreateModal() {
+function CreateModal(props) {
     return (
-        <div>
-            <Modal>
+        <div className="container">
+            <Modal show={props.open} onHide={props.handleClose}>
                 <Modal.Header>
                     <Modal.Title>Fill in your information below</Modal.Title>
                 </Modal.Header>

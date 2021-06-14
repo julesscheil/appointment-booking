@@ -1,4 +1,4 @@
-import { SELECT_APPOINTMENT, UPDATE_APPOINTMENT } from "./types";
+import { SELECT_APPOINTMENT, UPDATE_APPOINTMENT, OPEN_CLOSE_MODAL } from "./types";
 
 export const selectAppointment = appointmentTime => ({
   type: SELECT_APPOINTMENT,
@@ -17,5 +17,9 @@ export const updateAppointment = (apptData) => ({
   },
   apptData,
 });
+
+export const setModal = () => ({
+  type: OPEN_CLOSE_MODAL,
+})
 
 // export default { updateAppointment, selectAppointment };
