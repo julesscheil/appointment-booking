@@ -1,19 +1,20 @@
-import React, {Component} from 'react';
+import React from 'react';
 import { ListGroup, ListGroupItem, Button } from 'react-bootstrap';
+import { useSelector } from 'react-redux';
 
-class AppointmentTimes extends Component {
-render() {
-    console.log(this.props.time)
+function AppointmentTimes() {
+
+
+
 return (
     <div className="container">
         <ListGroup>
             <ListGroupItem>
-                <Button>this.props.time</Button>
+                <Button>time</Button>
             </ListGroupItem>
         </ListGroup>
     </div>
 )
-}
 };
 
 
